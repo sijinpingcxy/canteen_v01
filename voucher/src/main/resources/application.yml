@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: @profileActive@
+
+server:
+  port: 8082
+  servlet:
+    context-path: /voucher
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: postgresql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    com:
+      hiwan:
+        enjoy:
+          merchant:
+            app:
+              mapper: debug
+
+test:
+  value: 11aaasss

@@ -1,0 +1,59 @@
+#数据库配置
+spring:
+  datasource:
+    #数据库主库（写）
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.postgresql.Driver
+      jdbcUrl: jdbc:postgresql://pgm-bp1f09237um62987po.pg.rds.aliyuncs.com:3433/webm_moni?currentSchema=public
+      username: webm_moni
+      password: Fw7zeYr6f88EzGnHf7l1B4BMLmUea7OuMEaK9SPICiRbPBk4NuGuS3oJGP9x6MdU9KFUu5jj0gR3mX1EZFsxmg==
+      connectionProperties: config.decrypt=true
+      filters: stat,config
+    #数据库从库（只读）
+    slave:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.postgresql.Driver
+      jdbcUrl: jdbc:postgresql://pgm-bp1f09237um62987po.pg.rds.aliyuncs.com:3433/webm_moni?currentSchema=public
+      username: webm_read
+      password: Fw7zeYr6f88EzGnHf7l1B4BMLmUea7OuMEaK9SPICiRbPBk4NuGuS3oJGP9x6MdU9KFUu5jj0gR3mX1EZFsxmg==
+      connectionProperties: config.decrypt=true
+      filters: stat,config
+    druid:
+      #初始化连接大小
+      initial-size: 8
+      #最小空闲连接数
+      min-idle: 5
+      #最大连接数
+      max-active: 50
+      #查询超时时间
+      query-timeout: 6000
+      #事务查询超时时间
+      transaction-query-timeout: 6000
+      #关闭空闲连接超时时间
+      remove-abandoned-timeout: 1800
+
+  redis:
+    #数据库索引
+    database: 0
+    #host: 121.196.232.140
+    host: 127.0.0.1
+    port: 6379
+    #password: Hipay2016
+    password: password
+    #连接超时时间
+    timeout: 10000
+    block-when-exhausted: true
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+
+
+
