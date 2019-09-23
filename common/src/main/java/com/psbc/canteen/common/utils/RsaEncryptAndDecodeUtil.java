@@ -16,7 +16,7 @@ public class RsaEncryptAndDecodeUtil {
 
 
     public static void main(String[] args) {
-        String miwen = encrypt("password");
+        String miwen = encrypt("Hipay2016");
         System.out.println("密文=====>" + miwen);
         String mingwen = decrypt(miwen);
         System.out.println("名文=====>" + mingwen);

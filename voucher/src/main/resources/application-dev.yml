@@ -4,23 +4,19 @@ spring:
     #数据库主库（写）
     master:
       type: com.alibaba.druid.pool.DruidDataSource
-      #driver-class-name: org.postgresql.Driver
       driver-class-name: com.mysql.cj.jdbc.Driver
-      #jdbcUrl: jdbc:postgresql://pgm-bp1f09237um62987po.pg.rds.aliyuncs.com:3433/webm_moni?currentSchema=public
-      jdbcUrl: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
-      #username: webm_moni
-      username: root
-      #password: HMIrzVvyPDCL8Cw8UlOAnR38KiLu5SEV6jd3rm/jYHb6+lMP8woKWz7TFIWwLAlo3XY5vtMXkZZjBjvpAZYYDQ==
-      password: V1YGs87ezBBN+Nr0ivTre9tqte/5QVeygWmmseN0rlb4ntkS23IrNCZ3Ien2TdjdW1RbeTwglQWtCgr6fKqALQ==
+      jdbcUrl: jdbc:mysql://101.37.63.125:3306/psbc_vouchers?useUnicode=true&characterEncoding=utf-8
+      username: test_vouchers
+      password: HMIrzVvyPDCL8Cw8UlOAnR38KiLu5SEV6jd3rm/jYHb6+lMP8woKWz7TFIWwLAlo3XY5vtMXkZZjBjvpAZYYDQ==
       connectionProperties: config.decrypt=true;druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       filters: stat,config
     #数据库从库（只读）;config.decrypt.key=${public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     slave:
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbcUrl: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
-      username: root
-      password: V1YGs87ezBBN+Nr0ivTre9tqte/5QVeygWmmseN0rlb4ntkS23IrNCZ3Ien2TdjdW1RbeTwglQWtCgr6fKqALQ==
+      jdbcUrl: jdbc:mysql://101.37.63.125:3306/psbc_vouchers?useUnicode=true&characterEncoding=utf-8
+      username: test_vouchers
+      password: HMIrzVvyPDCL8Cw8UlOAnR38KiLu5SEV6jd3rm/jYHb6+lMP8woKWz7TFIWwLAlo3XY5vtMXkZZjBjvpAZYYDQ==
       connectionProperties: config.decrypt=true;druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       filters: stat,config
     druid:
